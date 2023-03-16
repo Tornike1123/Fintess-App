@@ -9,7 +9,7 @@ const Exercises = ({ Exercises, setExercises, bodyPart }) => {
 	return (
 		<Box id="exercises" sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
 			<Typography variant="h3" mb="46px">
-				Exercises
+				Showing Results
 			</Typography>
 			<Stack
 				direction="row"
@@ -20,6 +20,9 @@ const Exercises = ({ Exercises, setExercises, bodyPart }) => {
 				{Exercises.map((exercise, index) => (
 					<ExerciseCard key={index} exercise={exercise} />
 				))}
+			</Stack>
+			<Stack>
+				
 			</Stack>
 		</Box>
 	);
