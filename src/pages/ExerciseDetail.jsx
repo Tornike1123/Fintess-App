@@ -4,10 +4,16 @@ import { Box } from "@mui/material";
 import Detail from "../components/Details";
 import ExerciseVideos from "../components/ExerciseVideos";
 import SimilarExercise from "../components/SimilarExercise";
-import { exercisesOptions, fetchData } from "../utils/fetchData";
+import {
+	exercisesOptions,
+	fetchData,
+	youtubeOptions,
+} from "../utils/fetchData";
 
 const ExerciseDetail = () => {
 	const [exerciseDetail, setExerciseDetail] = useState({});
+	const [exerciseVideos, setExerciseVideos] = useState([]);
+
 	const { id } = useParams();
 
 	useEffect(() => {
@@ -20,6 +26,12 @@ const ExerciseDetail = () => {
 				exercisesOptions
 			);
 			setExerciseDetail(exerciseDetailData);
+
+			const exerciseVideoData = await fetchData(
+				`${youtubeSearchUrl}/search?q=${exerciseDetailData.name}`,
+				youtubeOptions
+			);
+			setExerciseVideos(exerciseVideoData);
 		};
 		fetchExercisesData();
 	}, [id]);
@@ -27,7 +39,7 @@ const ExerciseDetail = () => {
 	return (
 		<Box>
 			<Detail exerciseDetail={exerciseDetail} />
-			<ExerciseVideos />
+			<ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name}/>
 			<SimilarExercise />
 		</Box>
 	);
