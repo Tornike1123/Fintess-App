@@ -2,7 +2,14 @@ import React from "react";
 import { Stack, Typography } from "@mui/material";
 import Icon from "../assets/icons/gym.png";
 
-const BodyPart = ({ item, setBodyPart, bodyPart }) => {
+const BodyPart = ({
+	item,
+	setExercises,
+	bodyPart,
+	setBodyPart,
+	bodyParts,
+	setBodyParts,
+}) => {
 	return (
 		<Stack
 			type="button"
@@ -11,7 +18,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
 			className="bodyPart-card"
 			sx={{
 				borderTop: bodyPart === item ? "4px solid #ff2625" : "",
-				backgroundColor: "#fff",
+				background: "#fff",
 				borderBottomLeftRadius: "20px",
 				width: "270px",
 				height: "280px",
@@ -25,14 +32,14 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
 		>
 			<img
 				src={Icon}
-				alt="Dumbbell"
-				style={{ width: "40px", height: "40px" }}
+				alt="dumbbell"
+				style={{ width: "40px", height: "auto" }}
 			/>
 			<Typography
-				fontSize="24px"
+				fontSize={"24px"}
 				fontWeight="bold"
-				color="#3A1212"
-				textTransform="capitalize"
+				color="#3a1212"
+				textTransform={"capitalize"}
 			>
 				{item}
 			</Typography>

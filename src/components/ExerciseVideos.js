@@ -1,13 +1,14 @@
 import React from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Stack, Box, Typography } from "@mui/material";
 
 const ExerciseVideos = ({ exerciseVideos, name }) => {
-	if (!exerciseVideos.length) return "Loading...";
-
+	if (!exerciseVideos.length) {
+		return "..loading";
+	}
 	return (
 		<Box sx={{ marginTop: { lg: "200px", xs: "20px" } }} p="20px">
 			<Typography variant="h3" mb="33px">
-				watch{" "}
+				Watch{" "}
 				<span style={{ color: "#ff2625", textTransform: "capitalize" }}>
 					{name}
 				</span>{" "}
@@ -19,7 +20,7 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
 				alignItems="center"
 				sx={{
 					flexDirection: { lg: "row" },
-					gap: { lg: "110px", xs: "0" },
+					gap: { lg: "110px", xs: 0 },
 				}}
 			>
 				{exerciseVideos?.slice(0, 6).map((item, index) => (
