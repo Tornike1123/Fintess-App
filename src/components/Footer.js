@@ -24,7 +24,7 @@ const Footer = () => (
 			textAlign="center"
 			pb="40px"
 		>
-			Made with ❤️ Tornike Khatiashvili
+			Made with ❤️ by Giorgi Epitashvili
 		</Typography>
 	</Box>
 );

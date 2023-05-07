@@ -24,8 +24,8 @@
         "statusBar.background": "#1b1b1b",
         "statusBar.noFolderBackground": "#383232",
         "statusBar.debuggingBackground": "#000000",
-        "activityBar.background": "#342554",
-        "titleBar.activeBackground": "#493475",
-        "titleBar.activeForeground": "#FAF9FD"
+        "activityBar.background": "#4C2118",
+        "titleBar.activeBackground": "#6A2E22",
+        "titleBar.activeForeground": "#FDF9F8"
     }
 }
